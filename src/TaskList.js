@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useTaskContext } from './TaskContext';
 import TaskItem from './TaskItem';
@@ -9,15 +8,14 @@ const TaskList = () => {
 
   const handleDrop = (startIndex, endIndex) => {
     const reorderedTasks = [...tasks];
-    
-    dispatch(reorderedTasks)
+
     const [movedTask] = reorderedTasks.splice(startIndex, 1);
     reorderedTasks.splice(endIndex, 0, movedTask);
 
-    return reorderedTasks;
+    dispatch({ type: 'SET_TASKS', payload: reorderedTasks });
   };
 
-  const filteredTasks = showCompleted ? tasks.filter(task => task.completed) : tasks;
+  const filteredTasks = showCompleted ? tasks.filter((task) => task.completed) : tasks;
 
   return (
     <div>
