@@ -1,4 +1,4 @@
-// src/TaskItem.js
+
 import React, { useRef } from 'react';
 import { useTaskContext } from './TaskContext';
 
@@ -33,7 +33,7 @@ const TaskItem = ({ task, index, handleDrop }) => {
           onDrop={handleDropHere}
           style={{
          
-            backgroundColor:'wheat',
+            backgroundColor: task.completed ? 'lightgreen' : 'wheat',
           }} className='container d-flex flex-column text-center p-3 rounded shadow mt-3'
         >
           <h3 style={{ overflowY: 'hidden' }}>{task.title}</h3>
@@ -44,7 +44,7 @@ const TaskItem = ({ task, index, handleDrop }) => {
           )}
           <button
             className='ms-2 mt-2 btn border'
-            style={{ backgroundColor: task.completed ? 'green' : 'orange' }}
+            style={{ backgroundColor: task.completed ? 'orange' : 'green' }}
             onClick={() => dispatch({ type: 'TOGGLE_TASK', payload: task.id })}
           >
             {task.completed ? 'Mark Incomplete' : 'Mark Complete'}
