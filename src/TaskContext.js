@@ -13,6 +13,8 @@ const taskReducer = (state, action) => {
       return state.map((task) =>
         task.id === action.payload ? { ...task, completed: !task.completed } : task
       );
+    case 'SET_TASKS': 
+        return  action.payload;
     default:
       return state;
   }

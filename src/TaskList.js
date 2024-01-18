@@ -9,6 +9,8 @@ const TaskList = () => {
 
   const handleDrop = (startIndex, endIndex) => {
     const reorderedTasks = [...tasks];
+    
+    dispatch(reorderedTasks)
     const [movedTask] = reorderedTasks.splice(startIndex, 1);
     reorderedTasks.splice(endIndex, 0, movedTask);
 

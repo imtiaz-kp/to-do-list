@@ -16,10 +16,12 @@ const TaskItem = ({ task, index, handleDrop }) => {
 
   const handleDragOver = (e) => {
     e.preventDefault();
+    
   };
 
   const handleDropHere = () => {
     dispatch({ type: 'SET_TASKS', payload: handleDrop(index) });
+   
   };
 
   return (
