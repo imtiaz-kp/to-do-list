@@ -5,7 +5,7 @@ import TaskItem from './TaskItem';
 
 const TaskList = () => {
   const { tasks, dispatch } = useTaskContext();
-  const [showCompleted, setShowCompleted] = useState(true);
+  const [showCompleted, setShowCompleted] = useState(false);
 
   const handleDrop = (startIndex, endIndex) => {
     const reorderedTasks = [...tasks];
